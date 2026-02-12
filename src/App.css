@@ -1,0 +1,218 @@
+/* ===== CONTENEDOR PRINCIPAL ===== */
+.app-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, sans-serif;
+  background: #764ba2;
+  overflow-y: auto;
+}
+
+.app-header {
+  text-align: center;
+  color: white;
+  padding: 30px 20px;
+  flex-shrink: 0;
+}
+
+.app-header h1 {
+  font-size: 2.5em;
+  margin: 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.app-main {
+  flex: 1;
+  background: white;
+  margin: 0 20px 20px 20px;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+}
+
+/* ===== LOADER ===== */
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+}
+
+.loader-spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #667eea;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loader-text {
+  margin-top: 20px;
+  font-size: 1.2em;
+  color: #667eea;
+  font-weight: bold;
+}
+
+/* ===== FORMULARIO ===== */
+.form-container {
+  margin-bottom: 40px;
+  padding-bottom: 30px;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.form-container h2 {
+  color: #764ba2;
+  margin-bottom: 20px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #555;
+}
+
+.form-group input {
+  padding: 10px 15px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  font-size: 1em;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 5px rgba(102, 126, 234, 0.3);
+}
+
+.error-message {
+  color: #e74c3c;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.btn-add {
+  padding: 12px 20px;
+  background-color: #667eea;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-add:hover {
+  background-color: #5568d3;
+}
+
+.btn-add:active {
+  transform: scale(0.98);
+}
+
+/* ===== LISTA DE CONTACTOS ===== */
+.contact-list-container {
+  margin-top: 30px;
+}
+
+.contact-list-container h2 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.no-contacts {
+  text-align: center;
+  color: #999;
+  font-size: 1.1em;
+  padding: 40px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+}
+
+/* ===== ITEM DE CONTACTO ===== */
+.contact-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #f8f9fa;
+  border-left: 4px solid #667eea;
+  border-radius: 5px;
+  transition: all 0.3s;
+}
+
+.contact-item:hover {
+  background-color: #f0f1fa;
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.2);
+  transform: translateX(5px);
+}
+
+.contact-info {
+  flex-grow: 1;
+}
+
+.contact-name {
+  margin: 0;
+  font-size: 1.1em;
+  color: #333;
+}
+
+.contact-phone {
+  margin: 5px 0 0 0;
+  color: #666;
+  font-size: 0.95em;
+}
+
+.btn-delete {
+  padding: 8px 15px;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  margin-left: 10px;
+}
+
+.btn-delete:hover {
+  background-color: #c0392b;
+}
+
+.btn-delete:active {
+  transform: scale(0.95);
+}
