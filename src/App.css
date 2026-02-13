@@ -5,7 +5,7 @@
   display: flex;
   flex-direction: column;
   font-family: Arial, sans-serif;
-  background: #764ba2;
+  background: #333;
   overflow-y: auto;
 }
 
@@ -74,7 +74,7 @@
 }
 
 .form-container h2 {
-  color: #764ba2;
+  color: #667eea;
   margin-bottom: 20px;
 }
 
@@ -98,7 +98,7 @@
 .form-group input {
   padding: 10px 15px;
   border: 2px solid #ddd;
-  border-radius: 5px;
+  border-radius: 10px;
   font-size: 1em;
   transition: border-color 0.3s;
 }
@@ -120,7 +120,7 @@
   background-color: #667eea;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   font-size: 1em;
   font-weight: bold;
   cursor: pointer;
@@ -160,7 +160,7 @@
   font-size: 1.1em;
   padding: 40px;
   background-color: #f9f9f9;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 /* ===== ITEM DE CONTACTO ===== */
@@ -171,7 +171,7 @@
   padding: 15px 20px;
   background-color: #f8f9fa;
   border-left: 4px solid #667eea;
-  border-radius: 5px;
+  border-radius: 10px;
   transition: all 0.3s;
 }
 
@@ -202,7 +202,7 @@
   background-color: #e74c3c;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   cursor: pointer;
   font-weight: bold;
   transition: background-color 0.3s;
@@ -215,4 +215,31 @@
 
 .btn-delete:active {
   transform: scale(0.95);
+}
+
+.space-bottom {
+  padding-bottom: 150px;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 95%;
+  background-color: white;
+  color: #333;
+  text-align: center;
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px 0px 10px;
+}
+
+.footer-left,
+.footer-right {
+  display: flex;
+  flex-direction: column;
 }

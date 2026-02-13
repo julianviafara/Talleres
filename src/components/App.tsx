@@ -17,6 +17,7 @@ import { useState, useEffect } from "react";
 import Loader from "./Loader";
 import ContactForm from "./ContactForm";
 import ContactList from "./ContactList";
+import Footer from "./Footer";
 import "../App.css";
 
 interface Contact {
@@ -75,7 +76,7 @@ export default function App() {
   return (
     <div className="app-container">
       <header className="app-header">
-        <h1>📇 Agenda de Contactos</h1>
+        <h1>Agenda de Contactos</h1>
       </header>
 
       <main className="app-main">
@@ -89,6 +90,8 @@ export default function App() {
           </>
         )}
       </main>
+      <div className="space-bottom"></div>
+      <Footer />
     </div>
   );
 }
