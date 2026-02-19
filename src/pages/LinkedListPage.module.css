@@ -1,0 +1,72 @@
+.page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 28px;
+  width: 360px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.title {
+  margin: 0 0 12px 0;
+  color: #002776;
+}
+
+.songTitle {
+  font-weight: 600;
+  color: #009b3a;
+}
+
+.artist {
+  color: #444;
+  margin-bottom: 18px;
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.btn {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition:
+    transform 120ms ease,
+    background-color 150ms ease;
+}
+
+.primary {
+  background: #009b3a;
+  color: white;
+}
+
+.primary:hover {
+  background: #ffdf00;
+  color: #002776;
+}
+
+.secondary {
+  background: #002776;
+  color: white;
+}
+
+.secondary:hover {
+  background: #ffdf00;
+  color: #002776;
+}
+
+.muted {
+  color: #888;
+  margin-top: 12px;
+}
