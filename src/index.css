@@ -1,0 +1,33 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --bg-primary: #0f0f14; /* Main background */
+  --bg-secondary: #1a1a24; /* Cards / containers */
+  --bg-tertiary: #242432; /* Hover states */
+
+  --accent-primary: #ff2e88; /* Main pink */
+  --accent-hover: #ff4fa3; /* Hover state */
+  --accent-soft: #ff2e8833; /* Transparent pink */
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--bg-primary);
+  color: white;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
