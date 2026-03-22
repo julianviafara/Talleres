@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&display=swap');
 
 :root {
   --bg: #0e0e0e;
@@ -11,8 +11,8 @@
   --muted: #6b6b6b;
   --danger: #ff4d4d;
   --radius: 4px;
-  --font-display: "Syne", sans-serif;
-  --font-mono: "DM Mono", monospace;
+  --font-display: 'Syne', sans-serif;
+  --font-mono: 'DM Mono', monospace;
 }
 
 * {
@@ -76,9 +76,7 @@ body {
   text-transform: uppercase;
   padding: 1.5rem 2rem;
   cursor: pointer;
-  transition:
-    color 0.2s,
-    border-color 0.2s;
+  transition: color 0.2s, border-color 0.2s;
   position: relative;
 }
 
@@ -197,9 +195,7 @@ body {
   text-transform: uppercase;
   padding: 0.8rem 2rem;
   cursor: pointer;
-  transition:
-    opacity 0.2s,
-    transform 0.15s;
+  transition: opacity 0.2s, transform 0.15s;
 }
 
 .btn-submit:hover {
@@ -245,14 +241,8 @@ body {
 }
 
 @keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateY(8px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 .item-card__index {
@@ -317,5 +307,210 @@ body {
   .header__btn {
     padding: 1.5rem 1rem;
     font-size: 0.75rem;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   CHALLENGE 06 — AUTH & PRIVATE LAYOUT
+   ══════════════════════════════════════════════════════════════ */
+
+/* ── Header user area ── */
+/* Sits to the right of the nav; shows email + logout button */
+.header__user {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-left: 2rem;
+  border-left: 1px solid var(--border);
+  margin-left: 1rem;
+}
+
+.header__username {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--accent2);
+  letter-spacing: 0.05em;
+  max-width: 180px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.header__logout {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.8rem;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.header__logout:hover {
+  border-color: var(--danger);
+  color: var(--danger);
+}
+
+/* ── Login page ── */
+/* Vertically centered card layout */
+.login-wrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.login-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2.5rem 2.5rem 2rem;
+  width: 100%;
+  max-width: 420px;
+  position: relative;
+  overflow: hidden;
+  animation: slideIn 0.3s ease;
+}
+
+/* Accent stripe at the top of the card */
+.login-card__bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+}
+
+.login-card__title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.login-card__title span {
+  color: var(--accent);
+}
+
+/* Small hint with the demo credentials */
+.login-card__hint {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--muted);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.login-card__hint code {
+  color: var(--accent2);
+  background: var(--surface2);
+  padding: 0.1rem 0.35rem;
+  border-radius: 2px;
+}
+
+/* Inline validation errors under fields */
+.login-field-error {
+  font-family: var(--font-mono);
+  font-size: 0.67rem;
+  color: var(--danger);
+  letter-spacing: 0.05em;
+}
+
+/* Wrong-credentials error from context */
+.login-error {
+  background: rgba(255, 77, 77, 0.08);
+  border: 1px solid rgba(255, 77, 77, 0.3);
+  border-radius: var(--radius);
+  color: var(--danger);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  padding: 0.65rem 1rem;
+  margin-bottom: 1rem;
+  letter-spacing: 0.04em;
+}
+
+/* ── Challenge 06 private area ── */
+
+.ch06-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Banner shown at the top of the private area after login */
+.ch06-banner {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 1.5rem 2rem 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  max-width: 860px;
+  width: 100%;
+  margin: 0 auto;
+  /* Let it span full width visually */
+  align-self: stretch;
+  max-width: unset;
+}
+
+.ch06-banner__inner {
+  padding-bottom: 1rem;
+}
+
+.ch06-banner__title {
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.ch06-banner__title span {
+  color: var(--accent);
+}
+
+/* Sub-navigation tabs (Exercise 04 / Exercise 05) */
+.ch06-subnav {
+  display: flex;
+  gap: 0;
+}
+
+.ch06-subnav__btn {
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  color: var(--muted);
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.ch06-subnav__btn:hover { color: var(--text); }
+
+.ch06-subnav__btn.active {
+  color: var(--accent2);
+  border-bottom-color: var(--accent2);
+}
+
+@media (max-width: 560px) {
+  .login-card {
+    padding: 2rem 1.5rem 1.5rem;
+  }
+  .ch06-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
   }
 }
