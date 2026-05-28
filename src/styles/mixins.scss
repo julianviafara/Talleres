@@ -1,0 +1,109 @@
+@use 'variables' as *;
+
+
+@mixin card($bg: $surface-2) {
+  background: $bg;
+  border-radius: $radius-lg;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: $shadow-card;
+}
+
+
+@mixin card-hover {
+  transition: border-color $transition, box-shadow $transition, transform $transition;
+  &:hover {
+    border-color: rgba(29, 185, 84, 0.35);
+    box-shadow: $shadow-card, $shadow-green;
+    transform: translateY(-2px);
+  }
+}
+
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+@mixin flex-row($gap: 1rem) {
+  display: flex;
+  align-items: center;
+  gap: $gap;
+}
+
+
+@mixin truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+@mixin section-title {
+  font-size: $text-xs;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: $text-muted;
+  margin-bottom: 1rem;
+}
+
+
+@mixin custom-scrollbar {
+  &::-webkit-scrollbar { width: 4px; }
+  &::-webkit-scrollbar-track { background: transparent; }
+  &::-webkit-scrollbar-thumb {
+    background: $surface-4;
+    border-radius: $radius-full;
+  }
+}
+
+
+@mixin input-base {
+  width: 100%;
+  background: $surface-3;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: $radius-full;
+  color: $text-primary;
+  font-size: $text-sm;
+  padding: 0.65rem 1.25rem;
+  outline: none;
+  transition: border-color $transition, box-shadow $transition;
+
+  &::placeholder { color: $text-muted; }
+
+  &:focus {
+    border-color: $green;
+    box-shadow: 0 0 0 3px $green-glow;
+  }
+}
+
+
+@mixin btn-green {
+  background: $green;
+  color: #000;
+  font-weight: 700;
+  font-size: $text-sm;
+  border: none;
+  border-radius: $radius-full;
+  padding: 0.6rem 1.4rem;
+  cursor: pointer;
+  transition: background $transition, transform $transition;
+
+  &:hover {
+    background: lighten($green, 8%);
+    transform: scale(1.03);
+  }
+  &:active { transform: scale(0.97); }
+}
+
+
+@mixin badge($bg: $green-subtle, $color: $green) {
+  background: $bg;
+  color: $color;
+  border-radius: $radius-full;
+  font-size: $text-xs;
+  font-weight: 700;
+  padding: 0.2rem 0.65rem;
+}

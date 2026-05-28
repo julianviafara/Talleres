@@ -1,0 +1,136 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+
+.sp-card {
+  @include card;
+  padding: 1.5rem;
+
+  &--hover { @include card-hover; }
+  &--dark   { @include card($surface-1); }
+  &--accent { border-color: rgba(29, 185, 84, 0.3); }
+}
+
+
+.sp-section-title {
+  @include section-title;
+}
+
+
+.sp-input {
+  @include input-base;
+}
+
+
+.sp-btn {
+  @include btn-green;
+
+  &--ghost {
+    background: transparent;
+    color: $text-secondary;
+    border: 1px solid rgba(255,255,255,0.12);
+    &:hover {
+      background: $surface-3;
+      color: $text-primary;
+      transform: none;
+    }
+  }
+}
+
+
+.sp-badge {
+  @include badge;
+  &--rank {
+    @include badge($surface-3, $text-muted);
+    font-size: 0.7rem;
+    min-width: 1.5rem;
+    text-align: center;
+  }
+}
+
+
+.sp-song-row {
+  @include flex-row(1rem);
+  padding: 0.6rem 0.75rem;
+  border-radius: $radius-md;
+  cursor: pointer;
+  transition: background $transition;
+
+  &:hover { background: $surface-3; }
+
+  &__index {
+    width: 1.5rem;
+    text-align: center;
+    color: $text-muted;
+    font-size: $text-sm;
+    flex-shrink: 0;
+  }
+
+  &__info { flex: 1; min-width: 0; }
+
+  &__title {
+    @include truncate;
+    font-size: $text-sm;
+    font-weight: 600;
+    color: $text-primary;
+  }
+
+  &__artist {
+    @include truncate;
+    font-size: $text-xs;
+    color: $text-secondary;
+    margin-top: 2px;
+  }
+
+  &__plays {
+    font-size: $text-xs;
+    color: $green;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+}
+
+
+.sp-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: $surface-3;
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: $radius-full;
+  padding: 0.3rem 0.8rem;
+  font-size: $text-xs;
+  color: $text-secondary;
+  cursor: pointer;
+  transition: all $transition;
+
+  &:hover, &--active {
+    background: $green-subtle;
+    border-color: rgba(29, 185, 84, 0.4);
+    color: $green;
+  }
+}
+
+
+.sp-divider {
+  height: 1px;
+  background: rgba(255,255,255,0.06);
+  margin: 1rem 0;
+}
+
+
+.sp-empty {
+  @include flex-center;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 2rem;
+  color: $text-muted;
+  font-size: $text-sm;
+  text-align: center;
+}
+
+
+.sp-scroll {
+  overflow-y: auto;
+  @include custom-scrollbar;
+}
